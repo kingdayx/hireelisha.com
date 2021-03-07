@@ -1,67 +1,67 @@
-import React, { useState, useEffect } from "react";
-import "../App.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useEffect } from 'react'
+import '../App.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faTachometerAlt,
   faLaptopCode,
   faLightbulb,
   faRocket,
-} from "@fortawesome/free-solid-svg-icons";
-import { useSpring, animated } from "react-spring";
-import { motion } from "framer-motion";
+} from '@fortawesome/free-solid-svg-icons'
+import { useSpring, animated } from 'react-spring'
+import { motion } from 'framer-motion'
 
 const aniHead = {
   init: { x: -800, opacity: 0 },
   enter: { x: 0, opacity: 1 },
-};
+}
 
 export default function About1() {
-  const [about, setAbout] = useState(false);
-  const [hr, setHr] = useState(false);
-  const [hex, setHex] = useState(false);
+  const [about, setAbout] = useState(false)
+  const [hr, setHr] = useState(false)
+  const [hex, setHex] = useState(false)
 
   const handleAbout = () => {
-    const offset = window.scrollY;
+    const offset = window.scrollY
     if (offset > 833) {
-      setAbout(true);
+      setAbout(true)
     }
-  };
+  }
   const handleHr = () => {
-    const offset = window.scrollY;
+    const offset = window.scrollY
     if (offset > 833) {
-      setHr(true);
+      setHr(true)
     }
-  };
+  }
   const handleHex = () => {
-    const offset = window.scrollY;
+    const offset = window.scrollY
     if (offset > 833) {
-      setHex(true);
+      setHex(true)
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleAbout);
-    window.addEventListener("scroll", handleHr);
-    window.addEventListener("scroll", handleHex);
-  });
-  let x = ["head"];
+    window.addEventListener('scroll', handleAbout)
+    window.addEventListener('scroll', handleHr)
+    window.addEventListener('scroll', handleHex)
+  })
+  let x = ['head']
   if (about) {
-    x.push("scrollIn");
+    x.push('scrollIn')
   }
-  let xx = ["hr2"];
+  let xx = ['hr2']
   if (hr) {
-    xx.push("scrollIn");
+    xx.push('scrollIn')
   }
-  let xxx = ["hexs"];
+  let xxx = ['hexs']
   if (hex) {
-    xxx.push("scrollInHex");
+    xxx.push('scrollInHex')
   }
 
   const props = useSpring({
     to: [{ translateX: 0, opacity: 0 }, { opacity: 1 }],
     delay: 1500,
     from: { opacity: 0, translateX: -500 },
-  });
+  })
 
   return (
     <div className="about">
@@ -70,7 +70,7 @@ export default function About1() {
           <motion.div
             variants={aniHead}
             initial="init"
-            animate={about ? "enter" : "init"}
+            animate={about ? 'enter' : 'init'}
             className="head"
             transition={{ duration: 1 }}
           >
@@ -80,7 +80,7 @@ export default function About1() {
         </div>
       </div>
       <div className="contain">
-        <animated.div className={xxx.join(" ")}>
+        <animated.div className={xxx.join(' ')}>
           <div className="svgs">
             <div className="svg1">
               <div className="svg">
@@ -113,7 +113,7 @@ export default function About1() {
                 </svg>
                 <h3 id="fastest">Fast</h3>
                 <p className="para">
-                  Fast load times and lag free interaction, my highest priority.{" "}
+                  Fast load times and lag free interaction, my highest priority.{' '}
                 </p>
               </div>
               <div className="svg">
@@ -145,7 +145,7 @@ export default function About1() {
                 </svg>
                 <h3> Responsive </h3>
                 <p className="para">
-                  My layouts will work on any device, big or small.{" "}
+                  My layouts will work on any device, big or small.{' '}
                 </p>
               </div>
             </div>
@@ -175,11 +175,11 @@ export default function About1() {
                       fill="white"
                       d="M176 80c-52.94 0-96 43.06-96 96 0 8.84 7.16 16 16 16s16-7.16 16-16c0-35.3 28.72-64 64-64 8.84 0 16-7.16 16-16s-7.16-16-16-16zM96.06 459.17c0 3.15.93 6.22 2.68 8.84l24.51 36.84c2.97 4.46 7.97 7.14 13.32 7.14h78.85c5.36 0 10.36-2.68 13.32-7.14l24.51-36.84c1.74-2.62 2.67-5.7 2.68-8.84l.05-43.18H96.02l.04 43.18zM176 0C73.72 0 0 82.97 0 176c0 44.37 16.45 84.85 43.56 115.78 16.64 18.99 42.74 58.8 52.42 92.16v.06h48v-.12c-.01-4.77-.72-9.51-2.15-14.07-5.59-17.81-22.82-64.77-62.17-109.67-20.54-23.43-31.52-53.15-31.61-84.14-.2-73.64 59.67-128 127.95-128 70.58 0 128 57.42 128 128 0 30.97-11.24 60.85-31.65 84.14-39.11 44.61-56.42 91.47-62.1 109.46a47.507 47.507 0 0 0-2.22 14.3v.1h48v-.05c9.68-33.37 35.78-73.18 52.42-92.16C335.55 260.85 352 220.37 352 176 352 78.8 273.2 0 176 0z"
                     ></path>
-                  </svg>{" "}
+                  </svg>{' '}
                 </svg>
                 <h3 id="fastest1"> Intuitive </h3>
                 <p className="para1">
-                  Strong preference for easy to use, intuitive UX / UI.{" "}
+                  Strong preference for easy to use, intuitive UX / UI.{' '}
                 </p>
               </div>
               <div className="svg">
@@ -220,5 +220,5 @@ export default function About1() {
         </animated.div>
       </div>
     </div>
-  );
+  )
 }

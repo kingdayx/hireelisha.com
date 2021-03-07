@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import "../App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Nav } from "react-bootstrap";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react'
+import '../App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Nav } from 'react-bootstrap'
+import { motion } from 'framer-motion'
 
 function debounce(fn, ms) {
-  let timer;
+  let timer
   return (_) => {
-    clearTimeout(timer);
+    clearTimeout(timer)
     timer = setTimeout((_) => {
-      timer = null;
-      fn.apply(this, arguments);
-    }, ms);
-  };
+      timer = null
+      fn.apply(this, arguments)
+    }, ms)
+  }
 }
 
 const iconVariants = {
@@ -24,104 +24,126 @@ const iconVariants = {
     rotate: 0,
     scale: 1,
   },
-};
+}
 const menuVariants = {
   opened: {
     top: 0,
   },
   closed: {
-    top: "-90vh",
+    top: '-90vh',
   },
-};
+}
 
 export default function NavBar() {
-  const [dimensions, setDimensions] = useState(false);
-  const [scroll, setScroll] = useState(window.scrollY);
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [dimensions, setDimensions] = useState(false)
+  const [scroll, setScroll] = useState(window.scrollY)
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [width, setWidth] = useState(window.innerWidth)
 
   const handleScrollBar = () => {
-    const offset = window.scrollY;
+    const offset = window.scrollY
     if (offset > 833) {
-      setScrolled(true);
+      setScrolled(true)
     } else {
-      setScrolled(false);
+      setScrolled(false)
     }
-  };
+  }
 
   const debouncedHandleResize = debounce(function handleResize() {
-    const offset = window.innerWidth;
+    const offset = window.innerWidth
     if (offset < 601) {
-      setDimensions(true);
+      setDimensions(true)
     } else {
-      setDimensions(false);
+      setDimensions(false)
     }
-  }, 1000);
+  }, 1000)
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth)
+  }
+
+  let isMobile = width <= 500
 
   useEffect(() => {
-    const handleScroll = () => setScroll(window.scrollY);
-    window.addEventListener("scroll", handleScrollBar);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScroll(window.scrollY)
+    window.addEventListener('scroll', handleScrollBar)
+    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleWindowSizeChange)
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleWindowSizeChange)
+    }
+  })
 
-  const isHomeActive = scroll >= 0 && scroll < 783;
-  const isAboutActive = scroll >= 783 && scroll < 1300;
-  const isSkillsActive = scroll >= 1300 && scroll < 2198;
-  const isPortfolioActive = scroll >= 2199 && scroll < 2899;
-  const isContactActive = scroll >= 2900;
+  let isHomeActive
+  let isAboutActive
+  let isSkillsActive
+  let isPortfolioActive
+  let isContactActive
 
-  let x = ["nav"];
+  if (!isMobile) {
+    isHomeActive = scroll >= 0 && scroll < 783
+    isAboutActive = scroll >= 783 && scroll < 1300
+    isSkillsActive = scroll >= 1300 && scroll < 2198
+    isPortfolioActive = scroll >= 2199 && scroll < 2899
+    isContactActive = scroll >= 2900
+  }
+
+  let x = ['nav']
   if (scrolled) {
-    x.push("scrolled");
+    x.push('scrolled')
   }
-  let xx = ["item", "items"];
+  let xx = ['item', 'items']
   if (isAboutActive) {
-    xx.pop();
-    xx.push("scrollColor");
+    xx.pop()
+    xx.push('scrollColor')
   }
-  let xxx = ["item", "items"];
+  let xxx = ['item', 'items']
   if (isHomeActive) {
-    xxx.pop();
-    xxx.push("scrollColor");
+    xxx.pop()
+    xxx.push('scrollColor')
   }
-  let xxxx = ["item", "items"];
+  let xxxx = ['item', 'items']
   if (isContactActive) {
-    xxxx.pop();
-    xxxx.push("scrollColor");
+    xxxx.pop()
+    xxxx.push('scrollColor')
   }
 
-  let xxxxx = ["item", "items"];
+  let xxxxx = ['item', 'items']
   if (isPortfolioActive) {
-    xxxxx.pop();
-    xxxxx.push("scrollColor");
+    xxxxx.pop()
+    xxxxx.push('scrollColor')
   }
-  let xxxxxx = ["item", "items"];
+  let xxxxxx = ['item', 'items']
   if (isSkillsActive) {
-    xxxxxx.pop();
-    xxxxxx.push("scrollColor");
+    xxxxxx.pop()
+    xxxxxx.push('scrollColor')
   }
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
   const scrollToAbout = () => {
-    window.scrollTo({ top: 833, behavior: "smooth" });
-  };
+    if (!isMobile) {
+      window.scrollTo({ top: 833, behavior: 'smooth' })
+    } else {
+      window.scrollTo({ top: 1533, behavior: 'smooth' })
+    }
+  }
   const scrollToSkills = () => {
-    window.scrollTo({ top: 1500, behavior: "smooth" });
-  };
+    window.scrollTo({ top: 1500, behavior: 'smooth' })
+  }
   const scrollToPortfolio = () => {
-    window.scrollTo({ top: 2200, behavior: "smooth" });
-  };
+    window.scrollTo({ top: 2200, behavior: 'smooth' })
+  }
 
   const scrollToContact = () => {
-    window.scrollTo({ top: 3000, behavior: "smooth" });
-  };
+    window.scrollTo({ top: 3000, behavior: 'smooth' })
+  }
 
   return (
-    <div className={x.join(" ")}>
+    <div className={x.join(' ')}>
       {/* <motion.svg
         variants={iconVariants}
         animate={open ? "opened" : "closed"}
@@ -142,20 +164,20 @@ export default function NavBar() {
       <motion.Nav
         initial={false}
         variants={menuVariants}
-        animate={open ? "opened" : "closed"}
+        animate={open ? 'opened' : 'closed'}
         defaultActiveKey="/home"
         as="ul"
         className="navi"
       >
         <Nav.Item as="li">
-          <Nav.Link className={xxx.join(" ")} onClick={scrollToTop}>
+          <Nav.Link className={xxx.join(' ')} onClick={scrollToTop}>
             Home
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
           <Nav.Link
             eventKey="link-1"
-            className={xx.join(" ")}
+            className={xx.join(' ')}
             onClick={scrollToAbout}
           >
             About
@@ -164,7 +186,7 @@ export default function NavBar() {
         <Nav.Item as="li">
           <Nav.Link
             eventKey="link-1"
-            className={xxxxxx.join(" ")}
+            className={xxxxxx.join(' ')}
             onClick={scrollToSkills}
           >
             Skills
@@ -173,7 +195,7 @@ export default function NavBar() {
         <Nav.Item as="li">
           <Nav.Link
             eventKey="link-2"
-            className={xxxxx.join(" ")}
+            className={xxxxx.join(' ')}
             onClick={scrollToPortfolio}
           >
             Portfolio
@@ -190,5 +212,5 @@ export default function NavBar() {
         </Nav.Item> */}
       </motion.Nav>
     </div>
-  );
+  )
 }

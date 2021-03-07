@@ -1,3 +1,7 @@
+* {
+  border: 1px solid red !important;
+}
+
 .port {
   max-height: 90vh;
 }
@@ -351,7 +355,7 @@ ol {
   justify-content: center;
   padding-left: 200mm;
   padding-top: 10mm;
-  margin-top: 50px;
+  margin-top: 100px;
   width: 10ch;
 }
 
@@ -609,7 +613,6 @@ ol {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
 }
 
 .myBox {
@@ -909,7 +912,7 @@ ol {
   .myIMG {
     margin-left: -30px !important;
   }
-  .who{
+  .who {
     margin-left: -40 !important;
   }
 }
@@ -926,7 +929,7 @@ ol {
     flex-direction: column !important;
     justify-content: center;
     align-items: center;
-    margin-left: -7 0mm;
+    margin-left: -70mm;
   }
   .boxes {
     margin-top: -40px;
@@ -975,12 +978,15 @@ ol {
     width: 450px;
     padding-right: -40px;
   }
+  .theBoxes {
+    width: 100% !important;
+  }
   .boxes {
     display: flex;
     flex-direction: column !important;
     justify-content: center;
-    margin-left: 120px !important ;
-    max-width: 400px;
+    /* margin-left: 120px !important ;
+    max-width: 400px; */
   }
   .boxes1 {
     display: flex;
@@ -993,8 +999,6 @@ ol {
   .hr1 {
     display: flex;
     justify-content: center;
-    width: 100%;
-    margin-left: -150px !important;
   }
   .port {
     position: relative !important;
@@ -1054,14 +1058,6 @@ ol {
 }
 
 @media all and (max-width: 570px) {
-  .svgs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 30px;
-    margin-top: 50px;
-  }
   .skillHead {
     display: flex;
     justify-content: center;
@@ -1093,42 +1089,54 @@ ol {
   .hr1 {
     display: flex;
     justify-content: center;
-    position: relative !important;
-    right: 60% !important;
     margin-top: 30mm !important;
   }
-  .boxes1 {
+  /* .boxes1 {
     margin-left: -15px;
-  }
+  } */
   .boxes2 {
     display: flex;
     flex-direction: row;
-    margin-left: -15px;
+    /* margin-left: -15px; */
     margin-bottom: 60px;
   }
-  .port{
+  .port {
     margin-bottom: 40px !important;
   }
-  .theBoxes{
+  /* .theBoxes {
     margin-bottom: -40px;
+  } */
+  .boxes {
+    height: 100% !important;
   }
-.boxes{
-  height: 100% !important;
-}
   .contact {
     margin-top: -30px !important;
   }
-.port{
-  margin-top: -350px !important;
-}
-.boxes{
-  margin-bottom: 40px !important;
-}
+  .port {
+    margin-top: -350px !important;
+  }
+  .boxes {
+    margin-bottom: 40px !important;
+  }
 }
 
 @media all and (max-width: 777px) {
   .hr1 {
     margin-top: 30mm !important;
+  }
+  .svgs {
+    margin-left: 60px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .svg1 {
+    width: 100%;
+  }
+  .svg {
+    width: 100%;
   }
 }
 
@@ -1152,14 +1160,13 @@ ol {
 }
 
 @media all and (max-width: 1100px) {
-  .boxes2{
+  .boxes2 {
     margin-bottom: 50px !important;
   }
-  .contact{
+  .contact {
     margin-top: 400px !important;
   }
   .hr1 {
-    max-width: 100% !important;
     margin-left: -150px;
   }
   .contain {
@@ -1167,10 +1174,11 @@ ol {
     flex-direction: row;
   }
   .svg {
-    margin-right: 10px;
+    margin-right: 20px;
   }
   .svgs {
     margin-right: -20px;
+    margin-left: 20px;
   }
   .port {
     display: flex;
@@ -1205,11 +1213,15 @@ ol {
     width: 450px;
     padding-right: -40px;
   }
+  .who {
+    margin-right: 190px;
+  }
   .leftAbout {
     display: flex;
     justify-content: center;
-    margin-left: 260px;
-    margin-top: 60px;
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 100%;
   }
   .skillHead {
     display: flex;
@@ -1219,7 +1231,8 @@ ol {
     top: 40;
     right: 40%;
     left: 45%;
-    margin-top: 30px;
+
+    margin-top: 250px;
     margin-right: 20px;
   }
   .hr3 {
@@ -1236,11 +1249,14 @@ ol {
     margin-left: -350px;
   }
   .svgs {
-    margin-left: 15px;
+    margin-left: 25px;
   }
 }
 
 @media all and (min-width: 1100px) {
+  .hr1 {
+    margin-top: -50px !important;
+  }
   .about {
     margin-top: 130px;
   }
@@ -1252,10 +1268,10 @@ ol {
     top: 20;
     right: 40%;
     left: 50%;
-    margin-top: -60px;
+    margin-top: -95px;
   }
   .skillHeader {
-    margin-top: -10px;
+    margin-top: 70px;
     margin-bottom: 10px;
     margin-right: 100px;
   }
@@ -1277,7 +1293,7 @@ ol {
   .port {
     margin-bottom: 60px;
   }
-  .contact{
-    margin-top:50px !important;
+  .contact {
+    margin-top: 50px !important;
   }
 }
