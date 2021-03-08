@@ -5,19 +5,8 @@ import ModalApp from './Modal'
 
 const easing = [0.6, -0.05, 0.01, 0.99]
 
-const Image = styled.img`
-  width: ${(props) => props.imgW} !important;
-  height: ${(props) => props.imgH} !important;
-  position: ${(props) => props.pos} !important;
-  top: ${(props) => props.top} !important;
-  left: ${(props) => props.left} !important;
-  right: ${(props) => props.right} !important;
-  margin-right: ${(props) => props.mR} !important;
-  margin-left: ${(props) => props.mL} !important;
-`
-
 const Boxes = styled(motion.div)`
-  margin-top: 40px;
+  margin-top: 100px;
   padding: 40px 0px 0px 0px;
   width: 300px;
   height: 300px;
@@ -68,6 +57,17 @@ export default function Cards(props) {
     mR,
     mL,
   } = props
+
+  const Image = styled.img`
+    width: ${(props) => props.imgW} !important;
+    height: ${(props) => props.imgH} !important;
+    position: ${(props) => props.pos} !important;
+    top: ${(props) => props.top} !important;
+    left: ${(props) => props.left} !important;
+    right: ${(props) => props.right} !important;
+    margin-right: ${(props) => props.mR} !important;
+    margin-left: ${(props) => props.mL} !important;
+  `
 
   useEffect(() => {
     const handleBar = () => {

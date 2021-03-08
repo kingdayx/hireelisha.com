@@ -100,7 +100,7 @@ export default function Skills() {
             was 17. My first language was C++. When I wrote my first application
             with C++ I was so baffled! I was challenged to learn blockchain
             development in only 2 months 3 years ago by a friend of my mom. Ever
-            since I've been determined and excited to pave the future with
+            since, I've been determined and excited to pave the future with
             blockchain technologies.
           </p>
         </motion.div>

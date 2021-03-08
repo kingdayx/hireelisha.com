@@ -921,7 +921,7 @@ ol {
   .hr1 {
     display: flex;
     justify-content: center;
-    margin-right: 90mm !important;
+    margin-right: 40mm !important;
     margin-top: 30mm !important;
   }
   .aboutHead {
@@ -929,7 +929,7 @@ ol {
     flex-direction: column !important;
     justify-content: center;
     align-items: center;
-    margin-left: -70mm;
+    margin-left: -100mm;
   }
   .boxes {
     margin-top: -40px;
@@ -943,6 +943,24 @@ ol {
     display: flex;
     flex-direction: row;
     max-height: 100%;
+  }
+  .svgs {
+    margin-right: 40px !important;
+  }
+  .myIMG {
+    margin-right: 250px !important;
+  }
+  .who {
+    margin-right: 270px !important ;
+  }
+  .graph {
+    margin-right: 270px;
+  }
+  .boxes1 {
+    margin-left: 20px !important;
+  }
+  .boxes2 {
+    margin-left: 20px !important;
   }
 }
 
