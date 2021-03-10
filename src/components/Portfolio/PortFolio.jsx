@@ -139,6 +139,29 @@ export default function PortFolio() {
             setModal={setModal3}
             text="Decentralized Application"
           />
+          <div className="boxes3">
+            <Cards
+              src="images/monsters1.png"
+              custom={4}
+              img="img"
+              imgW="100%"
+              imgH="100%"
+              pos="fixed !important"
+              right="0"
+              left="0"
+              top="0"
+              title="Monsters Rolodex"
+              subtitle="A basic site I made with react"
+              description="A Rolodex I made with React that allows you to search through the list of monsters"
+              link="https://awesome-euclid-28f496.netlify.app/"
+              modalPic="images/monsters1.png"
+              modalPic1="images/monsters2.png"
+              modalPic2="images/monsters3.png"
+              modal={modal3}
+              setModal={setModal3}
+              text="Decentralized Application"
+            />
+          </div>
         </div>
       </div>
     </div>

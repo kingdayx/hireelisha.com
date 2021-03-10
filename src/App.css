@@ -1296,6 +1296,10 @@ ol {
   .leftAbout {
     margin-top: 50px;
   }
+  .boxes {
+    display: flex;
+    flex: 1 1 auto;
+  }
   .boxes1 {
     display: flex;
     flex-direction: row;
