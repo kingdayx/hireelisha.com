@@ -902,6 +902,11 @@ ol {
     max-height: 100%;
     margin-left: -25mm !important;
   }
+  .boxes3 {
+    display: flex;
+    flex-direction: column !important ;
+    max-height: 100%;
+  }
   .contact {
     margin-top: 30mm;
   }
@@ -936,6 +941,11 @@ ol {
     flex-direction: row;
   }
   .boxes2 {
+    display: flex;
+    flex-direction: row;
+    max-height: 100%;
+  }
+  .boxes3 {
     display: flex;
     flex-direction: row;
     max-height: 100%;
@@ -1297,7 +1307,7 @@ ol {
     margin-top: 50px;
   }
   .boxes {
-    display: flex;
+    display: flex-wrap !important;
     flex: 1 1 auto;
   }
   .boxes1 {
@@ -1313,5 +1323,23 @@ ol {
   }
   .contact {
     margin-top: 50px !important;
+  }
+}
+@media all and (max-width: 1300px) {
+  .boxes3 {
+    display: flex;
+    flex-wrap: row;
+  }
+  .boxeses {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -150px;
+    margin-bottom: 50px;
+  }
+  .boxList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }

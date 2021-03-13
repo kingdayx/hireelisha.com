@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components'
 import { Carousel } from 'react-bootstrap'
@@ -18,30 +18,47 @@ const mod = {
     duration: 1,
   },
 }
-
-const customStyles = {
-  content: {
-    width: '47%',
-    paddingBottom: '200px',
-    marginBottom: '-170px',
-    top: '0',
-    marginTop: '90mm',
-    left: '50%',
-    right: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    overflow: 'hidden',
-    height: '100vh',
-  },
-  overlay: {
-    zIndex: 1,
-    backgroundColor: 'rgba(50, 50, 50, 0.75)',
-  },
-}
+const Carousel1 = styled(Carousel)`
+  padding-bottom: -200px !important;
+`
 
 const ModalApp = (props) => {
+  const [width, setWidth] = useState(window.innerWidth)
   const { modal, setModal, text, link, img1, img2, img3, info, title } = props
 
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth)
+  }
+
+  let isMobile = width <= 500
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange)
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange)
+    }
+  })
+
+  const customStyles = {
+    content: {
+      width: `${isMobile ? '90%' : '47%'}`,
+      paddingBottom: '200px',
+      marginBottom: `${isMobile ? '-300px' : '170px'}`,
+      top: '0',
+      marginTop: '90mm',
+      left: '50%',
+      right: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      overflow: 'hidden',
+      height: `${isMobile ? '-50vh' : '100vh'}`,
+    },
+    overlay: {
+      zIndex: 1,
+      backgroundColor: 'rgba(50, 50, 50, 0.75)',
+    },
+  }
+  console.log('styles of modal', customStyles)
   function closeModal() {
     setModal(false)
   }
