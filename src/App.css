@@ -68,11 +68,6 @@ label {
   width: 100%;
 }
 
-.header {
-  background-color: aqua;
-  width: 100%;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -695,7 +690,7 @@ ol {
 }
 
 .h1 {
-  font-family: 'Arial';
+  font-family: "Arial";
   margin-top: 30px;
 }
 
@@ -703,17 +698,17 @@ ol {
   margin-top: -5px;
   margin-bottom: 20px;
   margin-left: 5px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .info {
   margin-top: 20px;
   margin-bottom: 70px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .view {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-size: 20px;
   margin-right: 20px;
   border: 1px solid blueviolet;
@@ -1342,4 +1337,30 @@ ol {
     flex-direction: column;
     justify-content: center;
   }
+}
+#text_div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 10px;
+}
+
+.center_all {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: white;
+}
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: -1;
 }
