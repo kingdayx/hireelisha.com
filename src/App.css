@@ -92,6 +92,7 @@ label {
 
 .btn {
   margin: 10px;
+  color: white;
 }
 
 .form-control {
@@ -795,6 +796,13 @@ ol {
   margin-top: 87mm;
   height: 70px;
   background-color: #333;
+}
+
+.block {
+  color: white;
+}
+.block2 {
+  color: white;
 }
 
 @media all and (max-width: 300px) {

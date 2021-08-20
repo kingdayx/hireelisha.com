@@ -8,6 +8,7 @@ import "../App.css";
 
 const ButtonSig = styled(motion.div)`
   border: 1px solid black;
+  color: white;
   .btn:hover {
     background-color: "#64ff33";
   }
@@ -49,7 +50,7 @@ class Header extends React.Component {
               options={{
                 background: {
                   color: {
-                    value: "#02101d",
+                    value: "#000",
                   },
                 },
                 fpsLimit: 60,
@@ -149,7 +150,7 @@ class Header extends React.Component {
                 retina_detect: true,
               }}
             />
-            <h1>
+            <h1 className="block2">
               Hello, I'm
               <i className="name1"> Elisha Day</i>.
             </h1>
