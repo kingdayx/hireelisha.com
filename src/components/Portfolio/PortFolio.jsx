@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import Cards from './Cards'
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Cards from "./Cards";
 
 const hrHead = {
   init: { x: -800, opacity: 0 },
   enter: { x: 0, opacity: 1 },
-}
+};
 
 export default function PortFolio() {
-  const [modal, setModal] = useState(false)
-  const [modal1, setModal1] = useState(false)
-  const [modal2, setModal2] = useState(false)
-  const [modal3, setModal3] = useState(false)
-  const [modal4, setModal4] = useState(false)
-  const [modal5, setModal5] = useState(false)
-  const [modal6, setModal6] = useState(false)
-  const [modal7, setModal7] = useState(false)
-  const [hr, setHr] = useState(false)
+  const [modal, setModal] = useState(false);
+  const [modal1, setModal1] = useState(false);
+  const [modal2, setModal2] = useState(false);
+  const [modal3, setModal3] = useState(false);
+  const [modal4, setModal4] = useState(false);
+  const [modal5, setModal5] = useState(false);
+  const [modal6, setModal6] = useState(false);
+  const [modal7, setModal7] = useState(false);
+  const [hr, setHr] = useState(false);
 
   const handleHr = () => {
-    const offset = window.scrollY
+    const offset = window.scrollY;
     if (offset > 1699) {
-      setHr(true)
+      setHr(true);
     } else {
-      setHr(false)
+      setHr(false);
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleHr)
-  })
+    window.addEventListener("scroll", handleHr);
+  });
 
-  let x = ['head']
+  let x = ["head"];
   if (hr) {
-    x.push('scrollIn')
+    x.push("scrollIn");
   }
 
   return (
@@ -44,16 +44,16 @@ export default function PortFolio() {
       <motion.hr
         variants={hrHead}
         initial="init"
-        animate={hr ? 'enter' : 'init'}
+        animate={hr ? "enter" : "init"}
         className="hr2"
         transition={{ duration: 1 }}
       />
-      <div className="categories">
+      {/* <div className="categories">
         <div className="head">All</div>
         <div className="head">React</div>
         <div className="head">React Native</div>
         <div className="head">Dapps</div>
-      </div>
+      </div> */}
       <div className="boxList">
         <div className="boxes">
           <div className="boxes1">
@@ -238,5 +238,5 @@ export default function PortFolio() {
         </div>
       </div>
     </div>
-  )
+  );
 }
