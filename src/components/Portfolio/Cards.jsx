@@ -1,22 +1,22 @@
-import { motion } from 'framer-motion'
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import ModalApp from './Modal'
+import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import ModalApp from "./Modal";
 
-const easing = [0.6, -0.05, 0.01, 0.99]
+const easing = [0.6, -0.05, 0.01, 0.99];
 
 const Boxes = styled(motion.div)`
   margin-top: 100px;
   padding: 40px 0px 0px 0px;
   width: 300px;
   height: 300px;
-`
+`;
 
 const ButtonSig = styled.div`
   border: 1px solid black;
   margin-bottom: 10px;
   .text{width:100%, height:100%}
-`
+`;
 
 const boxes = {
   init: { y: 60, opacity: 0 },
@@ -29,10 +29,10 @@ const boxes = {
       ease: easing,
     },
   }),
-}
+};
 
 export default function Cards(props) {
-  const [bar, setBar] = useState(false)
+  const [bar, setBar] = useState(false);
   const {
     custom,
     src,
@@ -56,7 +56,7 @@ export default function Cards(props) {
     top,
     mR,
     mL,
-  } = props
+  } = props;
 
   const Image = styled.img`
     width: ${(props) => props.imgW} !important;
@@ -67,28 +67,28 @@ export default function Cards(props) {
     right: ${(props) => props.right} !important;
     margin-right: ${(props) => props.mR} !important;
     margin-left: ${(props) => props.mL} !important;
-  `
+  `;
 
   useEffect(() => {
     const handleBar = () => {
-      const offset = window.scrollY
-      const set = document.onload
+      const offset = window.scrollY;
+      const set = document.onload;
       if (offset > 2099) {
-        setBar(true)
+        setBar(true);
       } else if (set > 1500) {
-        setBar(true)
+        setBar(true);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleBar)
-    return () => window.removeEventListener('scroll', handleBar)
-  })
+    window.addEventListener("scroll", handleBar);
+    return () => window.removeEventListener("scroll", handleBar);
+  });
 
   return (
     <Boxes
       variants={boxes}
       custom={custom}
-      animate={bar ? 'animate' : 'init'}
+      animate={bar ? "animate" : "init"}
       initial="init"
       className="theBoxes"
     >
@@ -128,5 +128,5 @@ export default function Cards(props) {
         </div>
       </div>
     </Boxes>
-  )
+  );
 }

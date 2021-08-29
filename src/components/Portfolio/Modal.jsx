@@ -1,15 +1,21 @@
-import { motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
-import Modal from 'react-modal'
-import styled from 'styled-components'
-import { Carousel } from 'react-bootstrap'
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import Modal from "react-modal";
+import styled from "styled-components";
+import { Carousel } from "react-bootstrap";
+
+const BottomModal = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+`;
 
 const Hr = styled.hr`
   color: linear-gradient(to right, green, blue);
-`
+`;
 
 const mod = {
-  init: { scale: 0.5, transition: { type: 'spring' } },
+  init: { scale: 0.5, transition: { type: "spring" } },
   animate: {
     scale: 1,
     opacity: 1,
@@ -17,52 +23,51 @@ const mod = {
   transition: {
     duration: 1,
   },
-}
+};
 const Carousel1 = styled(Carousel)`
   padding-bottom: -200px !important;
-`
+`;
 
 const ModalApp = (props) => {
-  const [width, setWidth] = useState(window.innerWidth)
-  const { modal, setModal, text, link, img1, img2, img3, info, title } = props
+  const [width, setWidth] = useState(window.innerWidth);
+  const { modal, setModal, text, link, img1, img2, img3, info, title } = props;
 
   function handleWindowSizeChange() {
-    setWidth(window.innerWidth)
+    setWidth(window.innerWidth);
   }
 
-  let isMobile = width <= 500
+  let isMobile = width <= 500;
 
   useEffect(() => {
-    window.addEventListener('resize', handleWindowSizeChange)
+    window.addEventListener("resize", handleWindowSizeChange);
     return () => {
-      window.removeEventListener('resize', handleWindowSizeChange)
-    }
-  })
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  });
 
   const customStyles = {
     content: {
-      width: `${isMobile ? '90%' : '47%'}`,
-      paddingBottom: '200px',
-      marginBottom: `${isMobile ? '-300px' : '170px'}`,
-      top: '0',
-      marginTop: '90mm',
-      left: '50%',
-      right: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      overflow: 'hidden',
-      height: `${isMobile ? '-50vh' : '100vh'}`,
+      width: `${isMobile ? "90%" : "47%"}`,
+      marginBottom: `${isMobile ? "-300px" : "0px"}`,
+      top: "0",
+      marginTop: "70mm",
+      left: "50%",
+      right: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      overflow: "scroll",
+      height: `${isMobile ? "-50vh" : "80vh"}`,
     },
     overlay: {
       zIndex: 1,
-      backgroundColor: 'rgba(50, 50, 50, 0.75)',
+      backgroundColor: "rgba(50, 50, 50, 0.75)",
     },
-  }
-  console.log('styles of modal', customStyles)
+  };
+  console.log("styles of modal", customStyles);
   function closeModal() {
-    setModal(false)
+    setModal(false);
   }
-  Modal.setAppElement('#root')
+  Modal.setAppElement("#root");
   return (
     <motion.div variants={mod} initial="init" animate="animate">
       <Modal isOpen={modal} onRequestClose={closeModal} style={customStyles}>
@@ -70,21 +75,21 @@ const ModalApp = (props) => {
           <Carousel className="imgs">
             <Carousel.Item>
               <img
-                style={{ width: '100%', height: 400 }}
+                style={{ width: "100%", height: 400 }}
                 src={img1}
                 alt="First slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
-                style={{ width: '100%', height: 400 }}
+                style={{ width: "100%", height: 400 }}
                 src={img2}
                 alt="Second slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
-                style={{ width: '100%', height: 400 }}
+                style={{ width: "100%", height: 400 }}
                 src={img3}
                 alt="Third slide"
               />
@@ -95,7 +100,7 @@ const ModalApp = (props) => {
         <div className="text1">{text} </div>
         <Hr />
         <div className="info">{info} </div>
-        <div className="bottom">
+        <BottomModal>
           <a
             href={link}
             target="_blank"
@@ -105,9 +110,8 @@ const ModalApp = (props) => {
             View
           </a>
 
-          <div onClick={closeModal}>
+          <div className="closeModal" onClick={closeModal}>
             <motion.svg
-              className="closeModal"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -120,10 +124,10 @@ const ModalApp = (props) => {
               />
             </motion.svg>
           </div>
-        </div>
+        </BottomModal>
       </Modal>
     </motion.div>
-  )
-}
+  );
+};
 
-export default ModalApp
+export default ModalApp;

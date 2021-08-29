@@ -163,8 +163,9 @@ ol {
 }
 
 .closeModal {
-  margin-top: -50px;
-  margin-left: 170mm;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
   transform: rotate(45deg) scale(1.5);
 }
 

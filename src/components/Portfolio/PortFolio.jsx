@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import styled from "styled-components";
 import Cards from "./Cards";
+
+const Folio = styled.div`
+  display: grid;
+  grid-template-columns: 1fr repeat(2, minmax(auto, 4.2rem)) 1fr;
+  grid-template-rows: max-content;
+  gap: 0rem 2rem 0rem 2rem;
+  margin: 0;
+`;
 
 const hrHead = {
   init: { x: -800, opacity: 0 },
@@ -39,7 +48,7 @@ export default function PortFolio() {
   return (
     <div className="port">
       <div className="div">
-        <h1 className="head">Portfolio</h1>
+        <h1 className="head"> Portfolio </h1>
       </div>
       <motion.hr
         variants={hrHead}
@@ -49,194 +58,140 @@ export default function PortFolio() {
         transition={{ duration: 1 }}
       />
       {/* <div className="categories">
-        <div className="head">All</div>
-        <div className="head">React</div>
-        <div className="head">React Native</div>
-        <div className="head">Dapps</div>
-      </div> */}
-      <div className="boxList">
-        <div className="boxes">
-          <div className="boxes1">
-            <Cards
-              src="images/ggf.png"
-              img="img"
-              imgW="100%"
-              imgH="100%"
-              pos=""
-              top="0"
-              left="0"
-              right="0"
-              mL=""
-              mR=""
-              custom={1}
-              title="GGSWAP"
-              subtitle="A fork of uniswap"
-              description="A dapp that allows you to swap tokens like uniswap with our coin"
-              link="http://www.ggswap.com.s3-website-us-east-1.amazonaws.com/#/"
-              modalPic="images/swap.png"
-              modalPic1="images/swap1.png"
-              modalPic2="images/swap2.png"
-              modal={modal}
-              setModal={setModal}
-              text="details about project"
-            />
-            <Cards
-              src="images/bombay2.png"
-              img="img"
-              imgW="100%"
-              imgH="100%"
-              pos="fixed !important"
-              top=""
-              left={0}
-              right={0}
-              alt="preview"
-              custom={2}
-              title="Bombay Shirts"
-              subtitle="A demo eccomerce site"
-              description="Created a demo for a client to sell their products"
-              link="http://www.bombayshirts.com.s3-website-us-east-1.amazonaws.com/"
-              modalPic="images/bombay1.png"
-              modalPic1="images/bombay2.png"
-              modalPic2="images/bombay3.png"
-              modal={modal1}
-              setModal={setModal1}
-              text="selling shirts"
-            />
-          </div>
-          <div className="boxes2">
-            <Cards
-              src="images/favicon.png"
-              img="img"
-              imgW="100%"
-              imgH="100%"
-              pos="relative !important"
-              top=""
-              custom={3}
-              title="Juicy Swap"
-              subtitle="A dapp adapted from sushiswap"
-              description="Creates liqiduity pools using uniswap"
-              link="http://winter-dust-4849.on.fleek.co/"
-              modalPic="images/juice.png"
-              modalPic1="images/juice1.png"
-              modalPic2="images/juice2.png"
-              modal={modal2}
-              setModal={setModal2}
-              text="details about"
-            />
-            <Cards
-              src="images/OTRPIZZATOKEN.png"
-              custom={4}
-              img="img"
-              imgW="100%"
-              imgH="100%"
-              pos="fixed !important"
-              right="10px !important"
-              left="-7px"
-              top="10px"
-              title="OTR Bake Sale"
-              subtitle="A crowd funding dapp using an NFT"
-              description="A decentralized application that allows you to name your pizza, adding toppings, purchase an NFT, and send it to friends and family."
-              link="http://www.otrcoin.io"
-              modalPic="images/otr.png"
-              modalPic1="images/cryptoPizza.png"
-              modalPic2="images/NFT.png"
-              modal={modal3}
-              setModal={setModal3}
-              text="Decentralized Application"
-            />
-          </div>
-        </div>
-        <div className="boxeses">
-          <div className="boxes3">
-            <Cards
-              src="images/monsters1.png"
-              custom={4}
-              img="img"
-              imgW="100%"
-              imgH="100%"
-              pos="fixed !important"
-              right="0"
-              left="0"
-              top="0"
-              title="Monsters Rolodex"
-              subtitle="A basic site I made with react"
-              description="A Rolodex I made with React that allows you to search through the list of monsters"
-              link="https://awesome-euclid-28f496.netlify.app/"
-              modalPic="images/monsters1.png"
-              modalPic1="images/monsters2.png"
-              modalPic2="images/monsters3.png"
-              modal={modal4}
-              setModal={setModal4}
-              text="Decentralized Application"
-            />
-            <Cards
-              src="images/monsters1.png"
-              custom={5}
-              img="img"
-              imgW="100%"
-              imgH="100%"
-              pos="fixed !important"
-              right="0"
-              left="0"
-              top="0"
-              title="Monsters Rolodex"
-              subtitle="A basic site I made with react"
-              description="A Rolodex I made with React that allows you to search through the list of monsters"
-              link="https://awesome-euclid-28f496.netlify.app/"
-              modalPic="images/monsters1.png"
-              modalPic1="images/monsters2.png"
-              modalPic2="images/monsters3.png"
-              modal={modal5}
-              setModal={setModal5}
-              text="Decentralized Application"
-            />
-          </div>
-          <div className="boxes3">
-            {/* <Cards
-              src="images/monsters1.png"
-              custom={4}
-              img="img"
-              imgW="100%"
-              imgH="100%"
-              pos="fixed !important"
-              right="0"
-              left="0"
-              top="0"
-              title="Monsters Rolodex"
-              subtitle="A basic site I made with react"
-              description="A Rolodex I made with React that allows you to search through the list of monsters"
-              link="https://awesome-euclid-28f496.netlify.app/"
-              modalPic="images/monsters1.png"
-              modalPic1="images/monsters2.png"
-              modalPic2="images/monsters3.png"
-              modal={modal6}
-              setModal={setModal6}
-              text="Decentralized Application"
-            /> */}
-            {/* <Cards
-              src="images/monsters1.png"
-              custom={5}
-              img="img"
-              imgW="100%"
-              imgH="100%"
-              pos="fixed !important"
-              right="0"
-              left="0"
-              top="0"
-              title="Monsters Rolodex"
-              subtitle="A basic site I made with react"
-              description="A Rolodex I made with React that allows you to search through the list of monsters"
-              link="https://awesome-euclid-28f496.netlify.app/"
-              modalPic="images/monsters1.png"
-              modalPic1="images/monsters2.png"
-              modalPic2="images/monsters3.png"
-              modal={modal7}
-              setModal={setModal7}
-              text="Decentralized Application"
-            /> */}
-          </div>
-        </div>
-      </div>
+                                                        <div className="head">All</div>
+                                                        <div className="head">React</div>
+                                                        <div className="head">React Native</div>
+                                                        <div className="head">Dapps</div>
+                                                      </div> */}
+      <Folio>
+        <Cards
+          src="images/air.png"
+          img="img"
+          imgW="100%"
+          imgH="100%"
+          pos=""
+          top="0"
+          left="0"
+          right="0"
+          mL=""
+          mR=""
+          custom={1}
+          title="Airbnb"
+          subtitle="A clone of Airbnb"
+          description="A site written in Next.js and Tailwind"
+          link="https://keen-carson-fe285b.netlify.app/"
+          modalPic="images/air1.png"
+          modalPic1="images/air2.png"
+          modalPic2="images/air3.png"
+          modal={modal}
+          setModal={setModal}
+          text="A clone of Airbnb"
+        />
+        <Cards
+          src="images/bombay2.png"
+          img="img"
+          imgW="100%"
+          imgH="100%"
+          pos="fixed !important"
+          top=""
+          left={0}
+          right={0}
+          alt="preview"
+          custom={2}
+          title="Bombay Shirts"
+          subtitle="A demo eccomerce site"
+          description="Created a demo for a client to sell their products"
+          link="http://www.bombayshirts.com.s3-website-us-east-1.amazonaws.com/"
+          modalPic="images/bombay1.png"
+          modalPic1="images/bombay2.png"
+          modalPic2="images/bombay3.png"
+          modal={modal1}
+          setModal={setModal1}
+          text="selling shirts"
+        />
+        <Cards
+          src="images/favicon.png"
+          img="img"
+          imgW="100%"
+          imgH="100%"
+          pos="relative !important"
+          top=""
+          custom={3}
+          title="Juicy Swap"
+          subtitle="A dapp adapted from sushiswap"
+          description="Creates liqiduity pools using uniswap"
+          link="http://winter-dust-4849.on.fleek.co/"
+          modalPic="images/juice.png"
+          modalPic1="images/juice1.png"
+          modalPic2="images/juice2.png"
+          modal={modal2}
+          setModal={setModal2}
+          text="A dapp adapted from sushiswap"
+        />
+        <Cards
+          src="images/OTRPIZZATOKEN.png"
+          custom={4}
+          img="img"
+          imgW="100%"
+          imgH="100%"
+          pos="fixed !important"
+          right="10px !important"
+          left="-7px"
+          top="10px"
+          title="OTR Bake Sale"
+          subtitle="A crowd funding dapp using an NFT"
+          description="A decentralized application that allows you to name your pizza, adding toppings, purchase an NFT, and send it to friends and family."
+          link="http://www.otrcoin.io"
+          modalPic="images/otr.png"
+          modalPic1="images/cryptoPizza.png"
+          modalPic2="images/NFT.png"
+          modal={modal3}
+          setModal={setModal3}
+          text="Decentralized Application"
+        />
+        <Cards
+          src="images/monsters1.png"
+          custom={4}
+          img="img"
+          imgW="100%"
+          imgH="100%"
+          pos="fixed !important"
+          right="0"
+          left="0"
+          top="0"
+          title="Monsters Rolodex"
+          subtitle="A basic site I made with react"
+          description="A Rolodex I made with React that allows you to search through the list of monsters"
+          link="https://awesome-euclid-28f496.netlify.app/"
+          modalPic="images/monsters1.png"
+          modalPic1="images/monsters2.png"
+          modalPic2="images/monsters3.png"
+          modal={modal4}
+          setModal={setModal4}
+          text="Decentralized Application"
+        />
+        <Cards
+          src="images/monsters1.png"
+          custom={5}
+          img="img"
+          imgW="100%"
+          imgH="100%"
+          pos="fixed !important"
+          right="0"
+          left="0"
+          top="0"
+          title="Monsters Rolodex"
+          subtitle="A basic site I made with react"
+          description="A Rolodex I made with React that allows you to search through the list of monsters"
+          link="https://awesome-euclid-28f496.netlify.app/"
+          modalPic="images/monsters1.png"
+          modalPic1="images/monsters2.png"
+          modalPic2="images/monsters3.png"
+          modal={modal5}
+          setModal={setModal5}
+          text="Decentralized Application"
+        />
+      </Folio>
     </div>
   );
 }
