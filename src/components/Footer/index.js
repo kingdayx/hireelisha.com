@@ -6,8 +6,9 @@ import "./styles.css";
 export default function Footer() {
   return (
     <div className="footer">
-      <FontAwesomeIcon className="" icon={faCopyright} />
-      <div className=""> Created by Elisha Day</div>
+      <FontAwesomeIcon className="copy" icon={faCopyright} />
+      <div className=""> Created by Elisha Day </div>
+      <div className="footer1">Whatsapp: +16098571287</div>
     </div>
   );
 }

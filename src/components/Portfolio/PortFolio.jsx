@@ -5,10 +5,19 @@ import Cards from "./Cards";
 
 const Folio = styled.div`
   display: grid;
-  grid-template-columns: 1fr repeat(2, minmax(auto, 4.2rem)) 1fr;
+  grid-template-columns: 1fr repeat(1, minmax(auto, 4.2rem)) 1fr;
   grid-template-rows: max-content;
-  gap: 0rem 2rem 0rem 2rem;
+  gap: 0 1rem;
   margin: 0;
+  @media all and (max-width: 720px) {
+    grid-template-columns: 0.5fr repeat(1, 0.5fr) 1rem;
+    margin: 0;
+  }
+  @media all and (max-width: 420px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+  }
 `;
 
 const hrHead = {
@@ -73,7 +82,7 @@ export default function PortFolio() {
           top="0"
           left="0"
           right="0"
-          mL=""
+          mL="9rem"
           mR=""
           custom={1}
           title="Airbnb"
@@ -88,26 +97,26 @@ export default function PortFolio() {
           text="A clone of Airbnb"
         />
         <Cards
-          src="images/bombay2.png"
+          src="images/gpt.png"
           img="img"
           imgW="100%"
           imgH="100%"
           pos="fixed !important"
-          top=""
-          left={0}
-          right={0}
+          top="0"
+          left="0"
+          right="0"
           alt="preview"
           custom={2}
-          title="Bombay Shirts"
-          subtitle="A demo eccomerce site"
-          description="Created a demo for a client to sell their products"
-          link="http://www.bombayshirts.com.s3-website-us-east-1.amazonaws.com/"
-          modalPic="images/bombay1.png"
-          modalPic1="images/bombay2.png"
-          modalPic2="images/bombay3.png"
+          title="GPT3 OpenAI"
+          subtitle="A demo landing page"
+          description="Created a demo to practice my skills "
+          link="https://gpt3-ai.netlify.app/"
+          modalPic="images/gpt1.png"
+          modalPic1="images/gpt2.png"
+          modalPic2="images/gpt3.png"
           modal={modal1}
           setModal={setModal1}
-          text="selling shirts"
+          text="an AI product"
         />
         <Cards
           src="images/favicon.png"
@@ -134,10 +143,11 @@ export default function PortFolio() {
           img="img"
           imgW="100%"
           imgH="100%"
-          pos="fixed !important"
+          pos="relative !important"
           right="10px !important"
           left="-7px"
           top="10px"
+          mL="9rem"
           title="OTR Bake Sale"
           subtitle="A crowd funding dapp using an NFT"
           description="A decentralized application that allows you to name your pizza, adding toppings, purchase an NFT, and send it to friends and family."
@@ -147,27 +157,6 @@ export default function PortFolio() {
           modalPic2="images/NFT.png"
           modal={modal3}
           setModal={setModal3}
-          text="Decentralized Application"
-        />
-        <Cards
-          src="images/monsters1.png"
-          custom={4}
-          img="img"
-          imgW="100%"
-          imgH="100%"
-          pos="fixed !important"
-          right="0"
-          left="0"
-          top="0"
-          title="Monsters Rolodex"
-          subtitle="A basic site I made with react"
-          description="A Rolodex I made with React that allows you to search through the list of monsters"
-          link="https://awesome-euclid-28f496.netlify.app/"
-          modalPic="images/monsters1.png"
-          modalPic1="images/monsters2.png"
-          modalPic2="images/monsters3.png"
-          modal={modal4}
-          setModal={setModal4}
           text="Decentralized Application"
         />
         <Cards
@@ -187,10 +176,31 @@ export default function PortFolio() {
           modalPic="images/monsters1.png"
           modalPic1="images/monsters2.png"
           modalPic2="images/monsters3.png"
+          modal={modal4}
+          setModal={setModal4}
+          text="Decentralized Application"
+        />
+        {/* <Cards
+          src="images/figsLogo.svg"
+          custom={6}
+          img="img"
+          imgW="100%"
+          imgH="100%"
+          pos="fixed !important"
+          right="0"
+          left="0"
+          top="0"
+          title="Non-Figgyables"
+          subtitle="An upcoming cross-chain NFT marketplace"
+          description="A NFT marketplace that is still in development. I wrote all of the smart contracts and backend and some of the front end"
+          link="https://figs-eight.vercel.app/"
+          modalPic="images/figs.png"
+          modalPic1="images/figs2.png"
+          modalPic2="images/figs3.png"
           modal={modal5}
           setModal={setModal5}
           text="Decentralized Application"
-        />
+        /> */}
       </Folio>
     </div>
   );

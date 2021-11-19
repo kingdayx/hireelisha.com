@@ -1,7 +1,9 @@
 .port {
   max-height: 90vh;
 }
-
+.header {
+  margin-bottom: -3.3rem !important;
+}
 .about {
   height: 100%;
   max-height: 90vh;
@@ -481,10 +483,11 @@ ol {
 
 .About2 {
   display: flex;
-  padding-top: 90px;
+  margin-top: 5rem;
+  padding-top: 5rem;
   flex-direction: column;
   overflow: hidden;
-  height: 90vh;
+  height: 46rem;
 }
 
 .container1 {
@@ -684,6 +687,8 @@ ol {
   color: blueviolet;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
 }
 
 .h2 {
